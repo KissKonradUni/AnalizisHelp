@@ -56,3 +56,8 @@ document.querySelectorAll(".plot").forEach(plot => {
     }
     ctx.stroke();
 })
+
+const html = document.querySelector("html");
+document.getElementById("lightmode").addEventListener("click", () => {
+    html.setAttribute("lightmode", !((html.getAttribute("lightmode") ?? false) === "true"));
+});

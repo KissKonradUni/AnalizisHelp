@@ -62,3 +62,36 @@ canvas {
     width: 10em;
     height: 10em;
 }
+
+html[lightmode="true"] {
+    filter: invert(1.0);
+}
+
+canvas {
+    box-shadow: inset 0px 0px 2px 1000px #222, 0px 0px 0.5em 0.5em #222;
+    margin-top: 0.3em;
+}
+
+#lightmode {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+
+    width: 3rem;
+    height: 3rem;
+
+    background-color: #222;
+    border: 0.2rem solid #333;
+    border-radius: 0.5rem;
+
+    text-align: center;
+    font-size: 1.8em;
+
+    transition: all 0.1s linear;
+
+    user-select: none;
+}
+
+#lightmode:hover {
+    scale: 1.2;
+}
