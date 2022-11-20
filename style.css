@@ -1,0 +1,64 @@
+html, body {
+    margin: 0;
+    padding: 0;
+
+    color: white;
+    background-color: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+table, td, tr {
+    border-spacing: 0;
+    border: 0.1em solid #666;
+}
+
+table {
+    margin: 1em;
+    width: 70%;
+    float: left;
+}
+
+.larger {
+    width: 70%;
+}
+
+.smaller {
+    width: 30%;
+}
+
+td {
+    padding: 0.5em;
+
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+
+    justify-content: center;
+    align-items: flex-start;
+}
+
+p {
+    width: 50%;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .flex {
+        flex-direction: column;
+    }
+
+    .title {
+        display: none;
+    }
+}
+
+canvas {
+    width: 10em;
+    height: 10em;
+}

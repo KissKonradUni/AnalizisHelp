@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Konrád féle analízis help</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="flex title">
+        <p class="larger">Trigonometria</p>
+        <p class="smaller">Egyéb</p>
+    </div>
+    <div class="flex">
+        <table>
+            <tr>
+                <td>Függvény</td>
+                <td>Derivált</td>
+                <td>Hatványalak</td>
+                <td>Exp. alak</td>
+                <td>Ábra</td>
+            </tr>
+            <tr>
+                <td>\(sin(x)\)</td>
+                <td>\(cos(x)\)</td>
+                <td>$$\sum_{n=0}^\infty (-1)^n \frac{x^{2n+1} }{(2n+1)!}$$</td>
+                <td>$$\frac{e^{ix}-e^{-ix} }{2i}$$</td>
+                <td>
+                    <div class="plot" func="Math.sin(x)">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(cos(x)\)</td>
+                <td>\(-sin(x)\)</td>
+                <td>$$\sum_{n=0}^\infty (-1)^n \frac{x^{2n} }{(2n)!}$$</td>
+                <td>$$\frac{e^{ix}+e^{-ix} }{2i}$$</td>
+                <td>
+                    <div class="plot" func="Math.cos(x)">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(tg(x)\)</td>
+                <td>$$\frac{1}{cos^2(x)}$$</td>
+                <td>-</td>
+                <td>$$\frac{e^{ix}-e^{-ix} }{e^{ix}+e^{-ix} }$$</td>
+                <td>
+                    <div minx="-3.140" maxx="3.140" miny="-3.140" maxy="3.140" class="plot" func="Math.tan(x)" samples="200" skip="Math.PI" skipOffset="Math.PI/2" delta="0.1">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(ctg(x)\)</td>
+                <td>$$- \frac{1}{sin^2(x)}$$</td>
+                <td>-</td>
+                <td>$$\frac{e^{ix}+e^{-ix} }{e^{ix}-e^{-ix} }$$</td>
+                <td><div minx="-3.140" maxx="3.140" miny="-3.140" maxy="3.140" class="plot" func="1 / Math.tan(x)" samples="200" skip="Math.PI" skipOffset="0" delta="0.1"></td>
+            </tr>
+            <tr>
+                <td>\(arcsin(x)\)</td>
+                <td>$$\frac{1}{\sqrt{1-x^2} }$$</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <div minx="-3.140" maxx="3.140" miny="-3.140" maxy="3.140" class="plot" func="Math.asin(x)">
+                </td>
+            </tr>
+            <tr>
+                <td>\(arccos(x)\)</td>
+                <td>$$-\frac{1}{\sqrt{1-x^2} }$$</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <div minx="-3.140" maxx="3.140" miny="-3.140" maxy="3.140" class="plot" samples="500" func="Math.acos(x)"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(arctg(x)\)</td>
+                <td>$$\frac{1}{1+x^2}$$</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <div class="plot" func="Math.atan(x)"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(arcctg(x)\)</td>
+                <td>$$-\frac{1}{1+x^2}$$</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <div class="plot" func="Math.PI / 2 - Math.atan(x)"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(sh(x)\)</td>
+                <td>\(ch(x)\)</td>
+                <td>$$\sum_{n=0}^\infty\frac{x^{2n+1} }{(2n+1)!}$$</td>
+                <td>$$\frac{e^x-e^{-x} }{2}$$</td>
+                <td>
+                    <div class="plot" func="Math.sinh(x)"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(ch(x)\)</td>
+                <td>\(sh(x)\)</td>
+                <td>$$\sum_{n=0}^\infty\frac{x^{2n} }{(2n)!}$$</td>
+                <td>$$\frac{e^x+e^{-x} }{2}$$</td>
+                <td>
+                    <div class="plot" func="Math.cosh(x)"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(th(x)\)</td>
+                <td>$$\frac{1}{ch^2(x)}$$</td>
+                <td>-</td>
+                <td>$$\frac{e^x-e^{-x} }{e^x+e^{-x} }$$</td>
+                <td>
+                    <div class="plot" func="Math.tanh(x)"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(cth(x)\)</td>
+                <td>$$-\frac{1}{sh^2(x)}$$</td>
+                <td>-</td>
+                <td>$$\frac{e^x+e^{-x} }{e^x-e^{-x} }$$</td>
+                <td>
+                    <div class="plot" func="1 / Math.tanh(x)" samples="200" skip="Math.PI*2" delta="0.1"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(arsh(x)\)</td>
+                <td>$$\frac{1}{\sqrt{1+x^2} }$$</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <div class="plot" func="Math.asinh(x)"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(arch(x)\)</td>
+                <td>$$\frac{1}{\sqrt{x^2-1} }$$</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <div class="plot" func="Math.acosh(x)" samples="200"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(arth(x)\)</td>
+                <td>$$\frac{1}{1-x^2},|x| < 1$$</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <div minx="-3.140" maxx="3.140" miny="-3.140" maxy="3.140" class="plot" func="Math.atanh(x)" samples="1000"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>\(arcth(x)\)</td>
+                <td>$$\frac{1}{1-x^2},|x| > 1$$</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <div minx="-3.140" maxx="3.140" miny="-3.140" maxy="3.140" class="plot" func="0.5*Math.log((x+1)/(x-1))" samples="2000" skip="Math.PI*2" delta="1.003"></div>
+                </td>
+            </tr>
+        </table>
+        <table class="smaller">
+            <tr>
+                <td>Függvény</td>
+                <td>Derivált</td>
+                <td>Hatványalak</td>
+            </tr>
+            <tr>
+                <td>\(a\)</td>
+                <td>\(0\)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>\(x\)</td>
+                <td>\(1\)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>\(x^n\)</td>
+                <td>\(nx^{n-1}\)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>\(e^x\)</td>
+                <td>\(e^x\)</td>
+                <td>$$\sum_{n=0}^\infty\frac{x^n}{n!}$$</td>
+            </tr>
+            <tr>
+                <td>\(ln(x)\)</td>
+                <td>$$\frac{1}{x}$$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>\(a^x\)</td>
+                <td>\(a^x\cdot ln(a)\)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>\(log_a{x}\)</td>
+                <td>$$\frac{1}{x\cdot ln(a)}$$</td>
+                <td>-</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
